@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yil
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yil
+  template:
+    metadata:
+      labels:
+        app: yil
+    spec:
+      containers:
+      - image: okteto.dev/yil:latest
+        name: yil
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "d11fbb27-719a-4132-b969-faedef9fbe16"
+        - name: Vless_Path
+          value: "/ghiuylk0987oikjh"
+        - name: Vmess_UUID
+          value: "d11fbb27-719a-4132-b969-faedef9fbe16"
+        - name: Vmess_Path
+          value: "/fgyt7872rig96dehkothn492"
+        - name: Share_Path
+          value: "/v2link"
